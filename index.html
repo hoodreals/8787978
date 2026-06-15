@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Continue to Video</title>
 
 <style>
 *{
@@ -12,30 +14,36 @@
 }
 
 body{
-    overflow:hidden;
     background:#000;
-    height:100vh;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
 }
 
-/* Video blur */
-.bg-video{
-    position:fixed;
-    top:0;
-    left:0;
+.video-wrapper{
+    position:relative;
     width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:blur(12px) brightness(0.7);
-    transform:scale(1.1);
+    max-width:420px;
 }
 
-/* Tombol tengah */
+.bg-video{
+    width:100%;
+    display:block;
+    border-radius:12px;
+    filter:blur(10px) brightness(.65);
+}
+
 .center-box{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
     z-index:10;
+    text-align:center;
 }
 
 .continue-btn{
@@ -45,9 +53,9 @@ body{
     color:#fff;
     text-decoration:none;
     border-radius:50px;
-    font-family:Arial,sans-serif;
-    font-size:20px;
+    font-size:18px;
     font-weight:bold;
+    box-shadow:0 4px 15px rgba(0,0,0,.4);
     transition:.2s;
 }
 
@@ -56,16 +64,22 @@ body{
 }
 </style>
 </head>
+
 <body>
 
-<video class="bg-video" autoplay muted loop playsinline>
-    <source src="https://cdn.videy.co/F1wZ4dk61.mp4" type="video/mp4">
-</video>
+<div class="video-wrapper">
 
-<div class="center-box">
-    <a href="https://cruzswim.org/4/3d48d83b119d7bef312e10639b9fc8d4" class="continue-btn">
-        Continue to Video
-    </a>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="https://cdn.videy.co/F1wZ4dk61.mp4" type="video/mp4">
+    </video>
+
+    <div class="center-box">
+        <a href="https://cruzswim.org/4/3d48d83b119d7bef312e10639b9fc8d4"
+           class="continue-btn">
+            Continue to Video
+        </a>
+    </div>
+
 </div>
 
 </body>
